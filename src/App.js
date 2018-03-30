@@ -6,6 +6,7 @@ import DropDown from './DropDown'
 import Header from './Header'
 import RegistrationForm from './RegistrationForm'
 import Cities from './Cities'
+import Menu from './Menu'
 
 const menu = [
     {
