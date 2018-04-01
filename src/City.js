@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 class City extends Component {
     constructor(props) {
@@ -31,7 +32,7 @@ class City extends Component {
         } else
         return (
             <div>
-                {this.props.item.name}
+                <Link to ={`/cities/${this.props.index}`}>{this.props.item.name}</Link>
                 <button onClick={this.deleteCity.bind(this)}>Delete city</button>
                 <button onClick={this.changeUpdateBtnState.bind(this)}>Update city</button>
             </div>

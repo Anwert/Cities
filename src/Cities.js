@@ -11,6 +11,7 @@ class Cities extends Component {
     }
 
     addCity() {
+        console.log('ownProps', this.props.citiesownProps)
         this.props.onAddCity(this.cityInput.value)
         console.log('store after add - ', this.props.store)
         this.cityInput.value=''
@@ -57,8 +58,9 @@ class Cities extends Component {
 }
 
 export default connect(
-    mapStateToProps => ({
+    (mapStateToProps, ownProps) => ({
         store: mapStateToProps.citylist.filter(city => city.name.includes(mapStateToProps.filterCities)),
+        citiesownProps: ownProps
         //store: mapStateToProps.citylist
     }),
     dispatch => ({
