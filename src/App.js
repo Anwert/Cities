@@ -1,41 +1,19 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 import './App.css'
 
 import DropDown from './DropDown'
-import Header from './Header'
 import RegistrationForm from './RegistrationForm'
 import Cities from './Cities'
 import Menu from './Menu'
 
-const menu = [
-    {
-        link: '/articles',
-        label: ' Articles'
-    },
-    {
-        link: '/contacts',
-        label: ' Contacts'
-    },
-    {
-        link: '/posts',
-        label: ' Posts'
-    }
-]
-
-
-class App extends Component {
-  render() {
-    return (
+const App = () => (
         <div className="container">
             <div>React-app</div>
             < DropDown />
-            < Header items={menu} />
             <RegistrationForm />
             <Cities />
         </div>
     )
-  }
-}
 
 export default App

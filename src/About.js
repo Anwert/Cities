@@ -1,14 +1,10 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Menu from './Menu'
 
-class About extends Component {
-    render() {
-        return (
+const About =() => (
             <div>
                 This is our site
             </div>
         )
-    }
-}
 
 export default About
