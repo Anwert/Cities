@@ -22,7 +22,6 @@ class RegistrationForm extends Component {
         this.setState({email: event.target.value})
     }
 
-
     render() {
         return (
             <form onSubmit={this.handleSubmit}>

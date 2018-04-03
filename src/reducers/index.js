@@ -1,11 +1,9 @@
 import { combineReducers } from 'redux'
 
-import citylist from './cities.js'
-import countrieslist from './countries.js'
+import citiesReducer from './citiesReducer.js'
 import filterCities from './filterCities.js'
 
 export default combineReducers({
-    citylist,
-    countrieslist,
+    citiesReducer,
     filterCities
 })

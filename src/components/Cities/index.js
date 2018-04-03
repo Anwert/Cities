@@ -1,37 +1,38 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 
 import City from './City'
-import {asyncGetCities} from './actions/cities.js'
+import * as citiesActions from '../../actions/citiesActions.js'
 
-const Cities = ({store, onAddCity, onDeleteCity, onUpdateCity, onFindCity, onGetCities}) => {
+const Cities = ({store, actions}) => {
     let cityInput = ''
     let searchInput = ''
 
     const addCity = () => {
-        onAddCity(cityInput.value)
+        actions.onAddCity(cityInput.value)
         console.log('store after add - ', store)
         cityInput.value=''
     }
 
     const deleteCity = (index) => {
         console.log('index of city to delete:', index)
-        onDeleteCity(index)
+        actions.onDeleteCity(index)
         console.log('store after delete - ', store)
     }
 
     const updateCity = (index, text) => {
         console.log('index of city to update:', index)
-        onUpdateCity(index, text)
+        actions.onUpdateCity(index, text)
         console.log('store after delete - ', store)
     }
 
     const searchCity = () => {
-        onFindCity(this.searchInput.value)
+        actions.onFindCity(searchInput.value)
     }
 
     const getCities = () => {
-        onGetCities()
+        actions.asyncGetCities()
     }
 
         return (
@@ -52,26 +53,12 @@ const Cities = ({store, onAddCity, onDeleteCity, onUpdateCity, onFindCity, onGet
         )
 }
 
-const mapStateToProps = (mapStateToProps, ownProps) => ({
-    store: mapStateToProps.citylist.filter(city => city.name.includes(mapStateToProps.filterCities)),
+const mapStateToProps = (state, ownProps) => ({
+    store: state.citiesReducer.filter(city => city.name.includes(state.filterCities))
 })
 
-const dispatch = (dispatch) => ({
-    onAddCity: (cityName) => {
-        dispatch({ type: 'ADD_CITY', payload: {name: cityName}})
-    },
-    onDeleteCity: (index) => {
-        dispatch({ type: 'DELETE_CITY', index: index})
-    },
-    onUpdateCity: (index, text) => {
-        dispatch({ type: 'UPDATE_CITY', text: text, index: index})
-    },
-    onFindCity: (name) => {
-        dispatch({ type: 'FIND_CITY', name: name})
-    },
-    onGetCities: () => {
-        dispatch(asyncGetCities())
-    }
+const mapDispatchToProps = (dispatch) => ({
+    actions: bindActionCreators(citiesActions, dispatch)
 })
 
-export default connect(mapStateToProps,dispatch)(Cities)
+export default connect(mapStateToProps, mapDispatchToProps)(Cities)

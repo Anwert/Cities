@@ -2,10 +2,10 @@ import React from 'react'
 
 import './App.css'
 
-import DropDown from './DropDown'
-import RegistrationForm from './RegistrationForm'
-import Cities from './Cities'
-import Menu from './Menu'
+import DropDown from '../DropDown'
+import RegistrationForm from '../RegistrationForm/RegistrationForm'
+import Cities from '../Cities/index'
+import Menu from '../Menu'
 
 const App = () => (
         <div className="container">

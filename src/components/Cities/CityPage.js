@@ -13,7 +13,7 @@ const CityPage = ( {city} ) => {
 const mapStateToProps = (state, ownProps) => {
     return {
         //city: state.citylist.find(city =>  === Number(ownProps.match.params.id))
-        city: state.citylist[ownProps.match.params.id]
+        city: state.citiesReducer[ownProps.match.params.id]
     }
 }
 
