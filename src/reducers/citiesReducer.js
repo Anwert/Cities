@@ -3,6 +3,8 @@ import initialState from '../store/initialState'
 
 export default function citiesReducer(state = initialState, action) {
     switch (action.type) {
+        case types.SET_CITIES:
+            return action.cities
         case types.ADD_CITY:
             return [
                 ...state,
@@ -21,8 +23,6 @@ export default function citiesReducer(state = initialState, action) {
                 }),
                 ...state.slice(action.index + 1)
             ]
-        case types.FETCH_CITIES:
-            return action.payload
         default:
             return state
     }
