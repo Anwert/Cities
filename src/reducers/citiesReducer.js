@@ -1,7 +1,6 @@
 import * as types from '../actions/actionTypes';
-import initialState from '../store/initialState'
 
-export default function citiesReducer(state = initialState, action) {
+export default function citiesReducer(state = [], action) {
     switch (action.type) {
         case types.SET_CITIES:
             return action.cities

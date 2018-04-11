@@ -5,7 +5,6 @@ const Menu = () => (
     <header>
         <nav>
             <ul>
-                <li><Link to='/'>Menu</Link></li>
                 <li><Link to='/app'>App</Link></li>
                 <li><Link to='/about'>About</Link></li>
             </ul>

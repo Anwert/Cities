@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 class City extends Component {
     constructor(props) {
         super(props)
-        this.state = { updateIsPushed: false }
+        this.state={ updateIsPushed: false }
     }
 
     deleteCity() {
