@@ -1,18 +1,25 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
+import Menu from '../Menu/Menu'
+
 const CityPage = ( {city} ) => {
     if (!city) return (
-        <div>Sorry this city doesn't exist</div>
+        <div>
+            < Menu />
+            <div>Sorry this city doesn't exist</div>
+        </div>
     )
     else return (
-        <div>{city.name}</div>
+        <div>
+            < Menu />
+            <div>{city.name}</div>
+        </div>
     )
 }
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        //city: state.citylist.find(city =>  === Number(ownProps.match.params.id))
         city: state.citiesReducer[ownProps.match.params.id]
     }
 }

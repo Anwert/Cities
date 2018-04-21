@@ -2,8 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import City from './City'
-import * as citiesActions from '../../actions/citiesActions.js'
+import City from './City/City'
+import * as citiesActions from '../../../../actions/citiesActions.js'
 
 const Cities = ({store, actions}) => {
     let cityInput = ''
@@ -45,7 +45,7 @@ const Cities = ({store, actions}) => {
                     <ul>
                         {store.map((item,index) =>
                              <li key={index}>
-                                 <City item={item} index={index} deleteCity={deleteCity} updateCity={updateCity}/>
+                                 <City item={item} index={index} deleteCity={deleteCity} updateCity={updateCity} />
                              </li>
                         )}
                     </ul>

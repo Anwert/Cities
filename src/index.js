@@ -4,8 +4,8 @@ import { createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
 import { getCities } from './actions/citiesActions';
 
-import Root from './components/Root'
-import './index.css'
+import Root from './components/Root/Root'
+import './styles/index.css'
 
 import reducer from './reducers'
 
