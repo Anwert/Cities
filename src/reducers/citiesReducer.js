@@ -6,8 +6,8 @@ export default function citiesReducer(state = [], action) {
             return action.cities
         case types.ADD_CITY:
             return [
-                ...state,
-                action.payload
+                action.payload,
+                ...state
             ]
         case types.DELETE_CITY:
             return [

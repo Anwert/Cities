@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import City from './City/City'
+import City from './City'
 import * as citiesActions from '../../../../actions/citiesActions.js'
 
 const Cities = ({store, actions}) => {
@@ -36,15 +36,19 @@ const Cities = ({store, actions}) => {
     }
 
         return (
-            <div>
-                    <input type="text" ref={(input) => { searchInput = input} }/>
-                    <button onClick={searchCity}>Search</button>
-                    <input type="text" ref={(input) => { cityInput = input} }/>
-                    <button onClick={addCity}>Add city</button>
-                    <button onClick={getCities}>Get cities</button>
-                    <ul>
+            <div className="cities">
+                    <div className="searchcity">
+                        <input type="text" ref={(input) => { searchInput = input} } className="searchcity-input" />
+                        <button onClick={searchCity} className="searchcity-btn"></button>
+                    </div>
+                    <div className="city" className="addcity">
+                        <input type="text" ref={(input) => { cityInput = input} } className="city-input"/>
+                        <button onClick={addCity} className="addcity-btn">Add city</button>
+                    </div>
+                    <button onClick={getCities} className="btn-getCities">Get cities</button>
+                    <ul className="city-ul">
                         {store.map((item,index) =>
-                             <li key={index}>
+                             <li key={index} className="city-li">
                                  <City item={item} index={index} deleteCity={deleteCity} updateCity={updateCity} />
                              </li>
                         )}

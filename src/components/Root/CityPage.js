@@ -1,19 +1,19 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import Menu from '../Menu/Menu'
+import Menu from './Menu'
 
 const CityPage = ( {city} ) => {
     if (!city) return (
-        <div>
+        <div className="container">
             < Menu />
             <div>Sorry this city doesn't exist</div>
         </div>
     )
     else return (
-        <div>
+        <div className="container">
             < Menu />
-            <div>{city.name}</div>
+            <div className="text">The city you chose is {city.name}!</div>
         </div>
     )
 }

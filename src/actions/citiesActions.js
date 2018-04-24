@@ -17,7 +17,7 @@ export const asyncGetCities = () => dispatch => {
             .catch(error => {
                 console.error(error);
             });
-    }, 4000)
+    }, 1000)
 }
 
 export const onGetCities = () => {asyncGetCities()}

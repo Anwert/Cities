@@ -1,29 +1,261 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  margin-top: 150px;
-  font: 1.2em Arial;
-  background: lightgoldenrodyellow;
+  margin-top: 50px;
+  font-family: 'Montserrat', sans-serif;
+  background: url(https://html5book.ru/wp-content/uploads/2015/07/background39.png);
+}
+
+.container {
+  width: 800px;
+  margin: 0 300px;
 }
 
 .menu {
-
-  width: 1200px;
-  margin: 0 auto;
+  margin-bottom: 50px;
 }
 
 .menu-link {
   display: inline-block;
-  width: 200px;
+  width: 250px;
+  height: 40px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: black;
+  margin-right: 90px;
+  font-size: 25px;
 }
 
-.container {
+.btn-getCities {
+  position: fixed;
+  bottom: 40px;
+  left: 1220px;
+  text-decoration: none;
+  outline: none;
+  display: inline-block;
+  width: 100px;
+  height: 37px;
+  line-height: 45px;
+  border-radius: 45px;
+  margin: 1px 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 1.7px;
+  font-weight: 400;
+  color: #524f4e;
+  background: white;
+  box-shadow: 0 8px 15px rgba(0,0,0,.1);
+  transition: .3s;
+  border: none;
+  padding-bottom: 40px;
+}
 
-  width: 1200px;
-  margin: 0 auto;
+.btn-getCities:hover {
+  cursor: pointer;
+  background: #2EE59D;
+  box-shadow: 0 15px 20px rgba(46,229,157,.4);
+  color: white;
+  transform: translateY(-5px);
+  padding-bottom: 40px;
+}
+
+.cities {
+  position: absolute;
+  width: 800px;
 }
 
 .city {
-  padding: 5px;
-  margin: 3px;
-  background: palegoldenrod;
+  position: relative;
+  padding: 5px 0 0 10px;
+  margin: 2px auto;
+  width: 750px;
+  height: 70px;
+  font-size: 1.2em;
+}
 
+.city:hover {
+  background: rgba(220,220,220,0.85);
+  border-radius: 20px;
+}
+
+.city-btns {
+  position: absolute;
+  top: 7px;
+  right:0;
+  z-index: 1;
+}
+
+.city-btn {
+  text-decoration: none;
+  outline: none;
+  display: inline-block;
+  width: 100px; //100
+  height: 37px;
+  line-height: 45px;
+  border-radius: 45px;
+  margin: 1px 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 1.7px;
+  font-weight: 400;
+  color: #524f4e;
+  background: white;
+  box-shadow: 0 8px 15px rgba(0,0,0,.1);
+  transition: .3s;
+  border: none;
+  padding-bottom: 40px;
+  margin-top: 8px;
+}
+
+.city-btn:hover {
+  cursor: pointer;
+  background: #2EE59D;
+  box-shadow: 0 15px 20px rgba(46,229,157,.4);
+  color: white;
+  transform: translateY(-5px);
+}
+
+.city-li {
+  list-style-type: none;
+}
+
+.city-link {
+  margin-top:7px;
+  top: 17px;
+  display: inline-block;
+  position: absolute;
+  text-decoration: none;
+  text-shadow: 0 1px 0 #eee;
+  color: black;
+}
+
+.city-input {
+  display: inline-block;
+  width: 150px;
+  height: 40px;
+  padding-left: 15px;
+  border-radius: 42px;
+  border: 2px solid #324b4e;
+  background: #F9F0DA;
+  outline: none;
+  position: relative;
+  color: #000;
+  font-size: 17px;
+  transition: .3s linear;
+}
+
+.city-input:focus {
+  width: 210px;
+}
+
+.city-input-change {
+  display: inline-block;
+  width: 150px;
+  height: 40px;
+  padding-left: 15px;
+  border-radius: 42px;
+  border: 2px solid #324b4e;
+  background: #F9F0DA;
+  outline: none;
+  position: relative;
+  color: #000;
+  font-size: 17px;
+  transition: .3s linear;
+  margin-top: 10px;
+}
+
+.city-input-change:focus {
+  width: 210px;
+}
+
+.text {
+  margin: 15px 0;
+  text-shadow: 0 1px 0 #eee;
+}
+
+.searchcity {
+  display:inline-block;
+  position: absolute;
+  right: 0;
+  top: -106px;
+  margin: 10px;
+  z-index: 1;
+  float:left;
+}
+
+.searchcity-input {
+  width: 150px;
+  height: 43px;
+  padding-left: 15px;
+  border-radius: 42px;
+  border: 2px solid #324b4e;
+  background: #F9F0DA;
+  outline: none;
+  position: relative;
+  transition: .3s linear;
+  color: #000;
+  font-size: 18px;
+}
+
+.searchcity-input:focus {
+  width: 250px;
+}
+
+.searchcity-btn {
+  width: 45px;
+  height: 35px;
+  background: none;
+  border: none;
+  position: absolute;
+  top: 4px;
+  right: 0;
+  cursor: pointer;
+}
+.searchcity-btn:before {
+  content: url('http://s1.iconbird.com/ico/2013/1/569/w24h24138981479606magnify.png');
+  color: #324b4e;
+}
+
+.addcity {
+  margin: 0 25px;
+  margin-bottom: 40px;
+}
+
+.addcity-btn {
+  text-decoration: none;
+  outline: none;
+  display: inline-block;
+  width: 100px;
+  height: 37px;
+  line-height: 45px;
+  border-radius: 45px;
+  margin: 1px 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 1.7px;
+  font-weight: 400;
+  color: #524f4e;
+  background: white;
+  box-shadow: 0 8px 15px rgba(0,0,0,.1);
+  transition: .3s;
+  border: none;
+  padding-bottom: 40px;
+}
+
+.addcity-btn:hover {
+  cursor: pointer;
+  background: #2EE59D;
+  box-shadow: 0 15px 20px rgba(46,229,157,.4);
+  color: white;
+  transform: translateY(-5px);
 }
