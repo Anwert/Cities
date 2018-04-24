@@ -99,7 +99,8 @@ body {
   height: 37px;
   line-height: 45px;
   border-radius: 45px;
-  margin: 1px 20px;
+  margin: 1px 10px;
+  margin-left: 20px;
   font-family: 'Montserrat', sans-serif;
   font-size: 11px;
   text-transform: uppercase;
@@ -184,7 +185,7 @@ body {
 .searchcity {
   display:inline-block;
   position: absolute;
-  right: 0;
+  right: -28px;
   top: -106px;
   margin: 10px;
   z-index: 1;
